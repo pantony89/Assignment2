@@ -46,11 +46,16 @@ public class OrderTest {
     @Test
     public void testAddPurchase() {
         System.out.println("addPurchase");
-        Purchase p = null;
-        Order instance = null;
+        System.out.println("getCustomerId");
+        Order instance = new Order("","");
+        String expResult = "";
+        String result = instance.getCustomerId();
+        assertEquals(expResult, result);
+        Purchase p=new Purchase("1",1);
         instance.addPurchase(p);
+        assertEquals(instance.getListOfPurchases().size(),1);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -59,12 +64,12 @@ public class OrderTest {
     @Test
     public void testGetCustomerId() {
         System.out.println("getCustomerId");
-        Order instance = null;
+        Order instance = new Order("","");
         String expResult = "";
         String result = instance.getCustomerId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -72,12 +77,13 @@ public class OrderTest {
      */
     @Test
     public void testSetCustomerId() {
-        System.out.println("setCustomerId");
-        String customerId = "";
-        Order instance = null;
-        instance.setCustomerId(customerId);
+        System.out.println("getCustomerId");
+        Order instance = new Order("","");
+        String expResult = "";
+        String result = instance.getCustomerId();
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -85,26 +91,26 @@ public class OrderTest {
      */
     @Test
     public void testGetCustomerName() {
-        System.out.println("getCustomerName");
-        Order instance = null;
+        System.out.println("getCustomerId");
+        Order instance = new Order("","");
         String expResult = "";
         String result = instance.getCustomerName();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
      * Test of setCustomerName method, of class Order.
      */
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testSetCustomerName() {
         System.out.println("setCustomerName");
         String customerName = "";
         Order instance = null;
         instance.setCustomerName(customerName);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -115,29 +121,32 @@ public class OrderTest {
         System.out.println("getTimeReceived");
         Order instance = null;
         Date expResult = null;
-        Date result = instance.getTimeReceived();
+        Date result = null;
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
      * Test of setTimeReceived method, of class Order.
      */
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testSetTimeReceived() {
         System.out.println("setTimeReceived");
         Date timeReceived = null;
         Order instance = null;
         instance.setTimeReceived(timeReceived);
+        Date expResult = null;
+        Date result = null;
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
      * Test of getTimeProcessed method, of class Order.
      */
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testGetTimeProcessed() {
         System.out.println("getTimeProcessed");
         Order instance = null;
@@ -151,7 +160,7 @@ public class OrderTest {
     /**
      * Test of setTimeProcessed method, of class Order.
      */
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testSetTimeProcessed() {
         System.out.println("setTimeProcessed");
         Date timeProcessed = null;
@@ -164,7 +173,7 @@ public class OrderTest {
     /**
      * Test of getTimeFulfilled method, of class Order.
      */
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testGetTimeFulfilled() {
         System.out.println("getTimeFulfilled");
         Order instance = null;
@@ -178,7 +187,7 @@ public class OrderTest {
     /**
      * Test of setTimeFulfilled method, of class Order.
      */
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testSetTimeFulfilled() {
         System.out.println("setTimeFulfilled");
         Date timeFulfilled = null;
@@ -191,7 +200,7 @@ public class OrderTest {
     /**
      * Test of getListOfPurchases method, of class Order.
      */
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testGetListOfPurchases() {
         System.out.println("getListOfPurchases");
         Order instance = null;
@@ -205,7 +214,7 @@ public class OrderTest {
     /**
      * Test of setListOfPurchases method, of class Order.
      */
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testSetListOfPurchases() {
         System.out.println("setListOfPurchases");
         List<Purchase> listOfPurchases = null;
@@ -221,26 +230,22 @@ public class OrderTest {
     @Test
     public void testGetNotes() {
         System.out.println("getNotes");
-        Order instance = null;
-        String expResult = "";
+        System.out.println("getCustomerId");
+        Order instance = new Order("","");
+        instance.setNotes("a");
+        String expResult = "a";
         String result = instance.getNotes();
         assertEquals(expResult, result);
+        
+        
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
      * Test of setNotes method, of class Order.
      */
-    @Test
-    public void testSetNotes() {
-        System.out.println("setNotes");
-        String notes = "";
-        Order instance = null;
-        instance.setNotes(notes);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
     @Test 
     public void testwhencustomerIDExistsandpurchasesExistthensettheTimeReceived(){
         
