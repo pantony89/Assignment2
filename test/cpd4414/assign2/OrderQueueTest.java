@@ -42,14 +42,14 @@ public class OrderQueueTest {
     /**
      * Test of add method, of class OrderQueue.
      */
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testAdd() throws Exception {
         System.out.println("add");
         Order order = null;
         OrderQueue instance = new OrderQueue();
         instance.add(order);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
         @Test
